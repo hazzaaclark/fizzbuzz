@@ -1,0 +1,15 @@
+SECTION .text
+GLOBAL start
+
+start:
+
+PUSH DWORD STARTMSGLENGTH
+PUSH DWORD STARTMSG
+PUSH DWORD 1
+MOV EAX, 4
+SUB ESP, 4
+INT 0X0
+
+MOV [counter], BYTE 1
+
+next_number:
