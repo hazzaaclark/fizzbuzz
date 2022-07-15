@@ -13,3 +13,12 @@ INT 0X0
 MOV [counter], BYTE 1
 
 next_number:
+MOV A1, [counter]
+XOR AH, AH
+MOV B1, 3
+DIV B1
+CMP AH, 0
+JHE NOT_FIZZ
+
+MOV AL, [counter]
+
